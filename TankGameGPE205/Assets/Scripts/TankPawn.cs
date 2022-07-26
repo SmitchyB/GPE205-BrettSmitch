@@ -20,25 +20,25 @@ public class TankPawn : Pawn
     //override of the MoveForward function initiated in the Pawn class
     public override void MoveForward()
     {
-        Debug.Log("Forward");
+        //runs the move function from mover/tankmover and applies the MoveSpeed
         mover.MoveForward(transform.forward, MoveSpeed);
     }
     //override of the MoveBackwards function initiated in the Pawn Class
     public override void MoveBackward()
     {
-        Debug.Log("Back");
+        //runs the move function from mover/tankmover and applies the MoveSpeed
         mover.MoveBackward(transform.forward * -1, MoveSpeed);
     }
-    //override of the ClockwiseRotation function initiated in the Pawn Class
+    //override of the RotateClockwise function initiated in the Pawn Class
     public override void RotateClockwise()
     {
-        Debug.Log("Clockwise");
+        //runs the move function from mover/tankmover and applies the Turnspeed 
         mover.ClockwiseRotation(TurnSpeed);
     }
-    //override of the CounerclockwiseRotation function initiated in the Pawn class
+    //override of the RotateCounter function initiated in the Pawn class
     public override void RotateCounter()
     {
-        Debug.Log("CounterClockwise");
+        //runs the move function from mover/tankmover and applies the Turnspeed 
         mover.CounterClockwiseRotation(TurnSpeed);
         
     }
