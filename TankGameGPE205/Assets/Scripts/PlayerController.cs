@@ -9,6 +9,7 @@ public class PlayerController : Controller
     public KeyCode MoveBackwardKey;
     public KeyCode ClockwiseRotationKey;
     public KeyCode CounterClockwiseKey;
+    public KeyCode FireButton;
 
     //overrride of the start function to run the base class start function
     public override void Start()
@@ -44,5 +45,15 @@ public class PlayerController : Controller
         {
             pawn.RotateCounter();
         }
+
+        if (Input.GetKey(FireButton))
+        {
+            pawn.Fire();
+        }
+    }
+
+    public void fire()
+    {
+        pawn.Fire();
     }
 }

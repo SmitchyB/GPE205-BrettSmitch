@@ -42,4 +42,9 @@ public class TankPawn : Pawn
         mover.CounterClockwiseRotation(TurnSpeed);
         
     }
+
+    public override void Fire()
+    {
+        shooter.Shoot(Shell, fireForce, DamageDone, Lifespan);
+    }
 }
