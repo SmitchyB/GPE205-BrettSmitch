@@ -45,15 +45,5 @@ public class PlayerController : Controller
         {
             pawn.RotateCounter();
         }
-
-        if (Input.GetKey(FireButton))
-        {
-            pawn.Fire();
-        }
-    }
-
-    public void fire()
-    {
-        pawn.Fire();
     }
 }

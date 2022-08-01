@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
     public void TakeDamage (float DamageAmount, Pawn source)
     {
         CurrentHealth = CurrentHealth - DamageAmount;
-        Debug.Log(source.name + " did " + DamageAmount);
+        // Debug.Log(source.name + " did " + DamageAmount +);
 
         if (CurrentHealth <= 0)
         {

@@ -4,18 +4,35 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
-
+    private bool ReadyToFire;
+    private float timeUntilNextEvent = 0;
     //override of the start function in the pawn class
     public override void Start()
     {
         //this is geting the start function from the base class(parent class)
         base.Start();
+        ReadyToFire = true;
     }
     //override of the update funcion in the pawn class
     public override void Update()
     {
         //this is geting the update function from the base class(parent class)
         base.Update();
+        timeUntilNextEvent -= Time.deltaTime;
+        if(timeUntilNextEvent <= 0)
+        {
+            ReadyToFire = true;
+        }
+        if(ReadyToFire == true && Input.GetKey(controller.FireButton))
+        {
+            Fire(); 
+            ReadyToFire = false;
+            timeUntilNextEvent += fireRate;
+        }
+        else if (ReadyToFire == false)
+        {
+            Debug.Log("It aint time. Wait for: " + timeUntilNextEvent + " Seconds");
+        }
     }
     //override of the MoveForward function initiated in the Pawn class
     public override void MoveForward()
@@ -45,6 +62,6 @@ public class TankPawn : Pawn
 
     public override void Fire()
     {
-        shooter.Shoot(Shell, fireForce, DamageDone, Lifespan);
+        shooter.Shoot(Shell, fireForce, DamageDone, Lifespan);      
     }
 }

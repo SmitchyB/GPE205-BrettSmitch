@@ -24,10 +24,14 @@ public abstract class Pawn : MonoBehaviour
     public float DamageDone;
     // Variable for how long our bullets survive if they don't collide
     public float Lifespan;
+    //Variable for Rate of Fire
+    public float fireRate;
   
   //holds the mover class
   public Mover mover;
   public Shooter shooter;
+  public PlayerController controller;
+
 
     //Start and updating functions tha might be overriden in the child classes.
   public virtual void Start()

@@ -735,8 +735,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838799793}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.601, z: 1.084}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.004, y: 0.601, z: 1.258}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 975267395}
@@ -1005,11 +1005,13 @@ MonoBehaviour:
   MoveSpeed: 10
   TurnSpeed: 1
   Shell: {fileID: 2928806344034572642, guid: 74f4282f23badb14cb9f03e942f1fe27, type: 3}
-  fireForce: 1000
+  fireForce: 900
   DamageDone: 5
-  Lifespan: 5
+  Lifespan: 3
+  fireRate: 2
   mover: {fileID: 975267404}
   shooter: {fileID: 975267409}
+  controller: {fileID: 73299783}
 --- !u!114 &975267404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,7 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f6a0b22cee92e4db99cc25bc968330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentHealth: 0
+  CurrentHealth: 50
   MaxHealth: 100
 --- !u!114 &975267409
 MonoBehaviour:
